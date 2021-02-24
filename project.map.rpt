@@ -1,0 +1,450 @@
+Analysis & Synthesis report for project
+Mon Jul 30 13:03:05 2018
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Logic Cells Representing Combinational Loops
+  8. General Register Statistics
+  9. Analysis & Synthesis Messages
+ 10. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++------------------------------------+-----------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jul 30 13:03:05 2018   ;
+; Quartus II Version                 ; 7.2 Build 151 09/26/2007 SJ Web Edition ;
+; Revision Name                      ; project                                 ;
+; Top-level Entity Name              ; Final                                   ;
+; Family                             ; Cyclone II                              ;
+; Total logic elements               ; 81                                      ;
+;     Total combinational functions  ; 81                                      ;
+;     Dedicated logic registers      ; 0                                       ;
+; Total registers                    ; 0                                       ;
+; Total pins                         ; 56                                      ;
+; Total virtual pins                 ; 0                                       ;
+; Total memory bits                  ; 0                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                       ;
+; Total PLLs                         ; 0                                       ;
++------------------------------------+-----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EP2C70F896C6       ;                    ;
+; Top-level entity name                                                          ; Final              ; project            ;
+; Family name                                                                    ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; DSP Block Balancing                                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- Cyclone II/Cyclone III                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto ROM Replacement                                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                              ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                  ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                      ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                  ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+; check.v                          ; yes             ; User Verilog HDL File  ; C:/Users/Embedded/Desktop/project/check.v     ;
+; status.v                         ; yes             ; User Verilog HDL File  ; C:/Users/Embedded/Desktop/project/status.v    ;
+; lib.v                            ; yes             ; User Verilog HDL File  ; C:/Users/Embedded/Desktop/project/lib.v       ;
+; dff1.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Embedded/Desktop/project/dff1.v      ;
+; mux1.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Embedded/Desktop/project/mux1.v      ;
+; compare.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Embedded/Desktop/project/compare.v   ;
+; segdriver.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Embedded/Desktop/project/segdriver.v ;
+; counter.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Embedded/Desktop/project/counter.v   ;
+; Final.v                          ; yes             ; User Verilog HDL File  ; C:/Users/Embedded/Desktop/project/Final.v     ;
+; save.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Embedded/Desktop/project/save.v      ;
+; SRL.v                            ; yes             ; User Verilog HDL File  ; C:/Users/Embedded/Desktop/project/SRL.v       ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 81    ;
+;                                             ;       ;
+; Total combinational functions               ; 81    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 22    ;
+;     -- 3 input functions                    ; 55    ;
+;     -- <=2 input functions                  ; 4     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 81    ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 56    ;
+; Maximum fan-out node                        ; S     ;
+; Maximum fan-out                             ; 26    ;
+; Total fan-out                               ; 299   ;
+; Average fan-out                             ; 2.18  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                          ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------+--------------+
+; |Final                     ; 81 (1)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 56   ; 0            ; |Final                                                       ; work         ;
+;    |check:comb_159|        ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|check:comb_159                                        ; work         ;
+;    |compare:comb_140|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|compare:comb_140                                      ; work         ;
+;    |counter:comb_158|      ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158                                      ; work         ;
+;       |dff1:comb_14|       ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_14                         ; work         ;
+;          |SRL:comb_8|      ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_14|SRL:comb_8              ; work         ;
+;             |nand1:comb_6| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6 ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_14|SRL:comb_9              ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_14|SRL:comb_9|nand1:comb_6 ; work         ;
+;       |dff1:comb_16|       ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_16                         ; work         ;
+;          |SRL:comb_8|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_16|SRL:comb_8              ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6 ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_16|SRL:comb_9              ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_16|SRL:comb_9|nand1:comb_6 ; work         ;
+;       |dff1:comb_18|       ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_18                         ; work         ;
+;          |SRL:comb_8|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_18|SRL:comb_8              ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6 ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_18|SRL:comb_9              ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_18|SRL:comb_9|nand1:comb_6 ; work         ;
+;          |and1:comb_10|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|counter:comb_158|dff1:comb_18|and1:comb_10            ; work         ;
+;    |save:comb_106|         ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106                                         ; work         ;
+;       |dff1:comb_5|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_5                             ; work         ;
+;          |SRL:comb_8|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_5|SRL:comb_8                  ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_5|SRL:comb_8|nand1:comb_6     ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_5|SRL:comb_9                  ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6     ; work         ;
+;       |dff1:comb_7|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_7                             ; work         ;
+;          |SRL:comb_8|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_7|SRL:comb_8                  ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_7|SRL:comb_8|nand1:comb_6     ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_7|SRL:comb_9                  ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6     ; work         ;
+;       |dff1:comb_9|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_9                             ; work         ;
+;          |SRL:comb_8|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_9|SRL:comb_8                  ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_9|SRL:comb_8|nand1:comb_6     ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_9|SRL:comb_9                  ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6     ; work         ;
+;    |save:comb_38|          ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38                                          ; work         ;
+;       |dff1:comb_5|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_5                              ; work         ;
+;          |SRL:comb_8|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_5|SRL:comb_8                   ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_5|SRL:comb_8|nand1:comb_6      ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_5|SRL:comb_9                   ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6      ; work         ;
+;       |dff1:comb_7|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_7                              ; work         ;
+;          |SRL:comb_8|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_7|SRL:comb_8                   ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_7|SRL:comb_8|nand1:comb_6      ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_7|SRL:comb_9                   ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6      ; work         ;
+;       |dff1:comb_9|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_9                              ; work         ;
+;          |SRL:comb_8|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_9|SRL:comb_8                   ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_9|SRL:comb_8|nand1:comb_6      ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_9|SRL:comb_9                   ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6      ; work         ;
+;    |save:comb_4|           ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4                                           ; work         ;
+;       |dff1:comb_5|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_5                               ; work         ;
+;          |SRL:comb_8|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_5|SRL:comb_8                    ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_5|SRL:comb_8|nand1:comb_6       ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_5|SRL:comb_9                    ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6       ; work         ;
+;       |dff1:comb_7|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_7                               ; work         ;
+;          |SRL:comb_8|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_7|SRL:comb_8                    ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_7|SRL:comb_8|nand1:comb_6       ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_7|SRL:comb_9                    ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6       ; work         ;
+;       |dff1:comb_9|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_9                               ; work         ;
+;          |SRL:comb_8|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_9|SRL:comb_8                    ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_9|SRL:comb_8|nand1:comb_6       ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_9|SRL:comb_9                    ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6       ; work         ;
+;    |save:comb_72|          ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72                                          ; work         ;
+;       |dff1:comb_5|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_5                              ; work         ;
+;          |SRL:comb_8|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_5|SRL:comb_8                   ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_5|SRL:comb_8|nand1:comb_6      ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_5|SRL:comb_9                   ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6      ; work         ;
+;       |dff1:comb_7|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_7                              ; work         ;
+;          |SRL:comb_8|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_7|SRL:comb_8                   ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_7|SRL:comb_8|nand1:comb_6      ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_7|SRL:comb_9                   ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6      ; work         ;
+;       |dff1:comb_9|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_9                              ; work         ;
+;          |SRL:comb_8|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_9|SRL:comb_8                   ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_9|SRL:comb_8|nand1:comb_6      ; work         ;
+;          |SRL:comb_9|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_9|SRL:comb_9                   ; work         ;
+;             |nand1:comb_6| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6      ; work         ;
+;    |segdriver:comb_160|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|segdriver:comb_160                                    ; work         ;
+;    |segdriver:comb_161|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|segdriver:comb_161                                    ; work         ;
+;    |segdriver:comb_162|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|segdriver:comb_162                                    ; work         ;
+;    |segdriver:comb_163|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|segdriver:comb_163                                    ; work         ;
+;    |segdriver:comb_164|    ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|segdriver:comb_164                                    ; work         ;
+;    |status:comb_165|       ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|status:comb_165                                       ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                     ;
++-------------------------------------------------------------+----+
+; Logic Cell Name                                             ;    ;
++-------------------------------------------------------------+----+
+; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~1       ;    ;
+; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~1       ;    ;
+; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~1       ;    ;
+; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~1      ;    ;
+; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~1      ;    ;
+; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~1      ;    ;
+; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~1      ;    ;
+; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~1      ;    ;
+; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~1      ;    ;
+; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~1     ;    ;
+; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~1     ;    ;
+; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~1     ;    ;
+; counter:comb_158|dff1:comb_16|SRL:comb_9|nand1:comb_6|out~1 ;    ;
+; counter:comb_158|dff1:comb_18|SRL:comb_9|nand1:comb_6|out~1 ;    ;
+; counter:comb_158|dff1:comb_14|SRL:comb_9|nand1:comb_6|out~1 ;    ;
+; save:comb_4|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~1       ;    ;
+; save:comb_4|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~1       ;    ;
+; save:comb_4|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~1       ;    ;
+; save:comb_38|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~1      ;    ;
+; save:comb_38|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~1      ;    ;
+; save:comb_38|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~1      ;    ;
+; save:comb_72|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~1      ;    ;
+; save:comb_72|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~1      ;    ;
+; save:comb_72|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~1      ;    ;
+; save:comb_106|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~1     ;    ;
+; save:comb_106|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~1     ;    ;
+; save:comb_106|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~1     ;    ;
+; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~1 ;    ;
+; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~1 ;    ;
+; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~1 ;    ;
+; Number of logic cells representing combinational loops      ; 30 ;
++-------------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Web Edition
+    Info: Processing started: Mon Jul 30 13:03:03 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project -c project
+Warning: Ignored assignments for entity "project" -- entity does not exist in design
+    Warning: Assignment of entity set_global_assignment -name LL_ROOT_REGION ON -entity project -section_id "Root Region" is ignored
+    Warning: Assignment of entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity project -section_id "Root Region" is ignored
+Info: Found 1 design units, including 1 entities, in source file check.v
+    Info: Found entity 1: check
+Info: Found 1 design units, including 1 entities, in source file status.v
+    Info: Found entity 1: status
+Info: Found 5 design units, including 5 entities, in source file lib.v
+    Info: Found entity 1: xor1
+    Info: Found entity 2: and1
+    Info: Found entity 3: or1
+    Info: Found entity 4: inv1
+    Info: Found entity 5: nand1
+Info: Found 1 design units, including 1 entities, in source file dff1.v
+    Info: Found entity 1: dff1
+Info: Found 1 design units, including 1 entities, in source file mux1.v
+    Info: Found entity 1: mux1
+Info: Found 1 design units, including 1 entities, in source file compare.v
+    Info: Found entity 1: compare
+Info: Found 1 design units, including 1 entities, in source file segdriver.v
+    Info: Found entity 1: segdriver
+Info: Found 1 design units, including 1 entities, in source file counter.v
+    Info: Found entity 1: counter
+Info: Found 1 design units, including 1 entities, in source file Final.v
+    Info: Found entity 1: Final
+Info: Found 1 design units, including 1 entities, in source file save.v
+    Info: Found entity 1: save
+Info: Found 1 design units, including 1 entities, in source file SRL.v
+    Info: Found entity 1: SRL
+Critical Warning (10846): Verilog HDL Instantiation warning at dff1.v(5): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at dff1.v(6): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at dff1.v(7): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at dff1.v(8): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at SRL.v(5): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at SRL.v(6): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at SRL.v(7): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at SRL.v(8): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at dff1.v(10): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at dff1.v(11): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at dff1.v(13): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at dff1.v(14): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at mux1.v(5): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at mux1.v(6): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at mux1.v(7): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at mux1.v(8): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at counter.v(8): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at counter.v(11): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at counter.v(14): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at save.v(5): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at save.v(6): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at save.v(8): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at save.v(9): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at save.v(11): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at save.v(12): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(12): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(13): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(14): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(15): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(18): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(19): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(20): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(21): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(28): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(30): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(33): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(34): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(35): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(36): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(37): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(38): instance has no name
+Info: Elaborating entity "Final" for the top level hierarchy
+Info: Elaborating entity "save" for hierarchy "save:comb_4"
+Info: Elaborating entity "mux1" for hierarchy "save:comb_4|mux1:comb_4"
+Info: Elaborating entity "inv1" for hierarchy "save:comb_4|mux1:comb_4|inv1:comb_4"
+Info: Elaborating entity "and1" for hierarchy "save:comb_4|mux1:comb_4|and1:comb_5"
+Info: Elaborating entity "or1" for hierarchy "save:comb_4|mux1:comb_4|or1:comb_7"
+Info: Elaborating entity "dff1" for hierarchy "save:comb_4|dff1:comb_5"
+Info: Elaborating entity "SRL" for hierarchy "save:comb_4|dff1:comb_5|SRL:comb_8"
+Info: Elaborating entity "nand1" for hierarchy "save:comb_4|dff1:comb_5|SRL:comb_8|nand1:comb_4"
+Info: Elaborating entity "compare" for hierarchy "compare:comb_140"
+Info: Elaborating entity "counter" for hierarchy "counter:comb_158"
+Info: Elaborating entity "check" for hierarchy "check:comb_159"
+Info: Elaborating entity "segdriver" for hierarchy "segdriver:comb_160"
+Info: Elaborating entity "status" for hierarchy "status:comb_165"
+Warning (12020): Port "ordered port 4" on the entity instantiation of "comb_106" is connected to a signal of width 32. The formal width of the signal in the module is 1.  Extra bits will be ignored.
+Warning (12020): Port "ordered port 4" on the entity instantiation of "comb_72" is connected to a signal of width 32. The formal width of the signal in the module is 1.  Extra bits will be ignored.
+Warning (12020): Port "ordered port 4" on the entity instantiation of "comb_38" is connected to a signal of width 32. The formal width of the signal in the module is 1.  Extra bits will be ignored.
+Warning (12020): Port "ordered port 4" on the entity instantiation of "comb_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  Extra bits will be ignored.
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "b4" stuck at VCC
+    Warning (13410): Pin "c4" stuck at VCC
+    Warning (13410): Pin "e4" stuck at GND
+    Warning (13410): Pin "f4" stuck at GND
+Warning: Ignored assignments for entity "project" -- entity does not exist in design
+    Warning: Assignment of entity set_global_assignment -name LL_ROOT_REGION ON -entity project -section_id "Root Region" is ignored
+    Warning: Assignment of entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity project -section_id "Root Region" is ignored
+Info: Generated suppressed messages file C:/Users/Embedded/Desktop/project/project.map.smsg
+Info: Implemented 137 device resources after synthesis - the final resource count might be different
+    Info: Implemented 14 input pins
+    Info: Implemented 42 output pins
+    Info: Implemented 81 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 56 warnings
+    Info: Allocated 194 megabytes of memory during processing
+    Info: Processing ended: Mon Jul 30 13:03:05 2018
+    Info: Elapsed time: 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Embedded/Desktop/project/project.map.smsg.
+
+

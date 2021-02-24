@@ -1,0 +1,790 @@
+Classic Timing Analyzer report for project
+Mon Jul 30 13:03:33 2018
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'S'
+  6. Clock Setup: 'CH'
+  7. Clock Hold: 'S'
+  8. tsu
+  9. tco
+ 10. tpd
+ 11. th
+ 12. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                                                                         ;
++------------------------------+------------------------------------------+---------------+----------------------------------+--------------------------------------------------------------+--------------------------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                                                         ; To                                                           ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+--------------------------------------------------------------+--------------------------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; 15.800 ns                        ; A1                                                           ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42 ; --         ; CH       ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 19.113 ns                        ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; g4                                                           ; S          ; --       ; 0            ;
+; Worst-case tpd               ; N/A                                      ; None          ; 20.886 ns                        ; A1                                                           ; g4                                                           ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; -2.767 ns                        ; A2                                                           ; save:comb_72|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6       ; --         ; S        ; 0            ;
+; Clock Setup: 'CH'            ; N/A                                      ; None          ; 195.16 MHz ( period = 5.124 ns ) ; counter:comb_158|dff1:comb_18|SRL:comb_9|nand1:comb_6|out~67 ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42 ; CH         ; CH       ; 0            ;
+; Clock Setup: 'S'             ; N/A                                      ; None          ; 303.40 MHz ( period = 3.296 ns ) ; save:comb_38|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6       ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; S          ; S        ; 0            ;
+; Clock Hold: 'S'              ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; save:comb_4|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6        ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; S          ; S        ; 2            ;
+; Total number of failed paths ;                                          ;               ;                                  ;                                                              ;                                                              ;            ;          ; 2            ;
++------------------------------+------------------------------------------+---------------+----------------------------------+--------------------------------------------------------------+--------------------------------------------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EP2C70F896C6       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; S               ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; CH              ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'S'                                                                                                                                                                                                                                                                        ;
++-------+------------------------------------------------+---------------------------------------------------------+----------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                                                    ; To                                                       ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+---------------------------------------------------------+----------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 303.40 MHz ( period = 3.296 ns )               ; save:comb_38|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6  ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51  ; S          ; S        ; None                        ; None                      ; 0.428 ns                ;
+; N/A   ; 339.90 MHz ( period = 2.942 ns )               ; save:comb_72|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6  ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58  ; S          ; S        ; None                        ; None                      ; 0.434 ns                ;
+; N/A   ; 352.61 MHz ( period = 2.836 ns )               ; save:comb_4|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6   ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46   ; S          ; S        ; None                        ; None                      ; 0.469 ns                ;
+; N/A   ; 357.40 MHz ( period = 2.798 ns )               ; save:comb_72|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6  ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51  ; S          ; S        ; None                        ; None                      ; 0.409 ns                ;
+; N/A   ; 367.92 MHz ( period = 2.718 ns )               ; save:comb_4|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6   ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58   ; S          ; S        ; None                        ; None                      ; 0.406 ns                ;
+; N/A   ; 368.73 MHz ( period = 2.712 ns )               ; save:comb_106|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6 ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51 ; S          ; S        ; None                        ; None                      ; 0.399 ns                ;
+; N/A   ; 383.14 MHz ( period = 2.610 ns )               ; save:comb_38|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46  ; S          ; S        ; None                        ; None                      ; 0.455 ns                ;
+; N/A   ; 399.68 MHz ( period = 2.502 ns )               ; save:comb_38|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58  ; S          ; S        ; None                        ; None                      ; 0.400 ns                ;
+; N/A   ; 410.51 MHz ( period = 2.436 ns )               ; save:comb_72|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6  ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46  ; S          ; S        ; None                        ; None                      ; 0.406 ns                ;
+; N/A   ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; save:comb_106|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6 ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58 ; S          ; S        ; None                        ; None                      ; 0.405 ns                ;
+; N/A   ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; save:comb_106|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6 ; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46 ; S          ; S        ; None                        ; None                      ; 0.396 ns                ;
+; N/A   ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; save:comb_4|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6   ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51   ; S          ; S        ; None                        ; None                      ; 0.399 ns                ;
++-------+------------------------------------------------+---------------------------------------------------------+----------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'CH'                                                                                                                                                                                                                                                                    ;
++-------+----------------------------------+---------------------------------------------------------------+---------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)             ; From                                                          ; To                                                            ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+----------------------------------+---------------------------------------------------------------+---------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 195.16 MHz ( period = 5.124 ns ) ; counter:comb_158|dff1:comb_18|SRL:comb_9|nand1:comb_6|out~67  ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH         ; CH       ; None                        ; None                      ; 1.693 ns                ;
+; N/A   ; 198.10 MHz ( period = 5.048 ns ) ; counter:comb_158|dff1:comb_18|SRL:comb_9|nand1:comb_6|out~67  ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH         ; CH       ; None                        ; None                      ; 1.646 ns                ;
+; N/A   ; 246.43 MHz ( period = 4.058 ns ) ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; counter:comb_158|dff1:comb_14|SRL:comb_9|nand1:comb_6|out~47  ; CH         ; CH       ; None                        ; None                      ; 0.532 ns                ;
+; N/A   ; 253.29 MHz ( period = 3.948 ns ) ; counter:comb_158|dff1:comb_14|SRL:comb_9|nand1:comb_6|out~47  ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH         ; CH       ; None                        ; None                      ; 1.102 ns                ;
+; N/A   ; 255.36 MHz ( period = 3.916 ns ) ; counter:comb_158|dff1:comb_16|SRL:comb_9|nand1:comb_6|out~55  ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH         ; CH       ; None                        ; None                      ; 1.084 ns                ;
+; N/A   ; 275.18 MHz ( period = 3.634 ns ) ; counter:comb_158|dff1:comb_16|SRL:comb_9|nand1:comb_6|out~55  ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH         ; CH       ; None                        ; None                      ; 0.952 ns                ;
+; N/A   ; 279.17 MHz ( period = 3.582 ns ) ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; counter:comb_158|dff1:comb_16|SRL:comb_9|nand1:comb_6|out~55  ; CH         ; CH       ; None                        ; None                      ; 0.536 ns                ;
+; N/A   ; 320.72 MHz ( period = 3.118 ns ) ; counter:comb_158|dff1:comb_18|SRL:comb_9|nand1:comb_6|out~67  ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH         ; CH       ; None                        ; None                      ; 0.869 ns                ;
+; N/A   ; 349.65 MHz ( period = 2.860 ns ) ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; counter:comb_158|dff1:comb_18|SRL:comb_9|nand1:comb_6|out~67  ; CH         ; CH       ; None                        ; None                      ; 0.539 ns                ;
++-------+----------------------------------+---------------------------------------------------------------+---------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'S'                                                                                                                                                                                                                                                            ;
++------------------------------------------+---------------------------------------------------------+----------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                                                    ; To                                                       ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+---------------------------------------------------------+----------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; save:comb_4|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6   ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51   ; S          ; S        ; None                       ; None                       ; 0.399 ns                 ;
+; Not operational: Clock Skew > Data Delay ; save:comb_106|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6 ; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46 ; S          ; S        ; None                       ; None                       ; 0.396 ns                 ;
++------------------------------------------+---------------------------------------------------------+----------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                 ;
++-------+--------------+------------+------+---------------------------------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To                                                            ; To Clock ;
++-------+--------------+------------+------+---------------------------------------------------------------+----------+
+; N/A   ; None         ; 15.800 ns  ; A1   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A   ; None         ; 15.362 ns  ; A1   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A   ; None         ; 15.108 ns  ; A1   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A   ; None         ; 13.560 ns  ; C3   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A   ; None         ; 13.122 ns  ; C3   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A   ; None         ; 12.868 ns  ; C3   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A   ; None         ; 12.668 ns  ; B2   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A   ; None         ; 12.371 ns  ; B1   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A   ; None         ; 12.230 ns  ; B2   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A   ; None         ; 12.203 ns  ; C2   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A   ; None         ; 12.069 ns  ; A    ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A   ; None         ; 12.065 ns  ; B3   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A   ; None         ; 11.976 ns  ; B2   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A   ; None         ; 11.933 ns  ; B1   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A   ; None         ; 11.913 ns  ; A    ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A   ; None         ; 11.765 ns  ; C2   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A   ; None         ; 11.708 ns  ; C    ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A   ; None         ; 11.679 ns  ; B1   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A   ; None         ; 11.627 ns  ; B3   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A   ; None         ; 11.511 ns  ; C2   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A   ; None         ; 11.377 ns  ; A    ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A   ; None         ; 11.373 ns  ; B3   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A   ; None         ; 11.270 ns  ; C    ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A   ; None         ; 11.147 ns  ; A3   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A   ; None         ; 11.016 ns  ; C    ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A   ; None         ; 10.709 ns  ; A3   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A   ; None         ; 10.455 ns  ; A3   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A   ; None         ; 10.277 ns  ; C1   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A   ; None         ; 9.846 ns   ; C1   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A   ; None         ; 9.585 ns   ; C1   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A   ; None         ; 9.390 ns   ; B    ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A   ; None         ; 9.234 ns   ; B    ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A   ; None         ; 8.698 ns   ; B    ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A   ; None         ; 8.645 ns   ; A2   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A   ; None         ; 8.214 ns   ; A2   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A   ; None         ; 8.100 ns   ; B    ; save:comb_4|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6         ; S        ;
+; N/A   ; None         ; 7.953 ns   ; A2   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A   ; None         ; 6.356 ns   ; S    ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A   ; None         ; 6.318 ns   ; S    ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A   ; None         ; 6.287 ns   ; A1   ; save:comb_38|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6        ; S        ;
+; N/A   ; None         ; 6.269 ns   ; CH   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A   ; None         ; 6.113 ns   ; CH   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A   ; None         ; 5.627 ns   ; S    ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A   ; None         ; 5.594 ns   ; B2   ; save:comb_72|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6        ; S        ;
+; N/A   ; None         ; 5.577 ns   ; CH   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A   ; None         ; 5.335 ns   ; C2   ; save:comb_72|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6        ; S        ;
+; N/A   ; None         ; 5.293 ns   ; C1   ; save:comb_38|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6        ; S        ;
+; N/A   ; None         ; 5.270 ns   ; B1   ; save:comb_38|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6        ; S        ;
+; N/A   ; None         ; 5.005 ns   ; A    ; save:comb_4|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6         ; S        ;
+; N/A   ; None         ; 4.984 ns   ; C    ; save:comb_4|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6         ; S        ;
+; N/A   ; None         ; 4.682 ns   ; C3   ; save:comb_106|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6       ; S        ;
+; N/A   ; None         ; 4.189 ns   ; A3   ; save:comb_106|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6       ; S        ;
+; N/A   ; None         ; 4.056 ns   ; B3   ; save:comb_106|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6       ; S        ;
+; N/A   ; None         ; 3.472 ns   ; A2   ; save:comb_72|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6        ; S        ;
++-------+--------------+------------+------+---------------------------------------------------------------+----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                                                                                         ;
++-----------------------------------------+-----------------------------------------------------+------------+--------------------------------------------------------------+----+------------+
+; Slack                                   ; Required tco                                        ; Actual tco ; From                                                         ; To ; From Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+--------------------------------------------------------------+----+------------+
+; N/A                                     ; None                                                ; 19.113 ns  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; g4 ; S          ;
+; N/A                                     ; None                                                ; 19.110 ns  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; d4 ; S          ;
+; N/A                                     ; None                                                ; 18.906 ns  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; a4 ; S          ;
+; N/A                                     ; None                                                ; 18.657 ns  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; a5 ; S          ;
+; N/A                                     ; None                                                ; 18.383 ns  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; b5 ; S          ;
+; N/A                                     ; None                                                ; 18.381 ns  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; e5 ; S          ;
+; N/A                                     ; None                                                ; 18.377 ns  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; c5 ; S          ;
+; N/A                                     ; None                                                ; 18.350 ns  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; g5 ; S          ;
+; N/A                                     ; None                                                ; 18.348 ns  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; d5 ; S          ;
+; N/A                                     ; None                                                ; 18.051 ns  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; f5 ; S          ;
+; N/A                                     ; None                                                ; 16.071 ns  ; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46     ; g4 ; S          ;
+; N/A                                     ; None                                                ; 16.068 ns  ; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46     ; d4 ; S          ;
+; N/A                                     ; None                                                ; 15.864 ns  ; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46     ; a4 ; S          ;
+; N/A                                     ; None                                                ; 15.615 ns  ; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46     ; a5 ; S          ;
+; N/A                                     ; None                                                ; 15.341 ns  ; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46     ; b5 ; S          ;
+; N/A                                     ; None                                                ; 15.339 ns  ; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46     ; e5 ; S          ;
+; N/A                                     ; None                                                ; 15.335 ns  ; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46     ; c5 ; S          ;
+; N/A                                     ; None                                                ; 15.308 ns  ; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46     ; g5 ; S          ;
+; N/A                                     ; None                                                ; 15.306 ns  ; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46     ; d5 ; S          ;
+; N/A                                     ; None                                                ; 15.009 ns  ; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46     ; f5 ; S          ;
+; N/A                                     ; None                                                ; 14.151 ns  ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; g4 ; S          ;
+; N/A                                     ; None                                                ; 14.148 ns  ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; d4 ; S          ;
+; N/A                                     ; None                                                ; 14.061 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; g4 ; S          ;
+; N/A                                     ; None                                                ; 14.058 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; d4 ; S          ;
+; N/A                                     ; None                                                ; 13.944 ns  ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; a4 ; S          ;
+; N/A                                     ; None                                                ; 13.943 ns  ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; g4 ; S          ;
+; N/A                                     ; None                                                ; 13.940 ns  ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; d4 ; S          ;
+; N/A                                     ; None                                                ; 13.906 ns  ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; g4 ; S          ;
+; N/A                                     ; None                                                ; 13.903 ns  ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; d4 ; S          ;
+; N/A                                     ; None                                                ; 13.868 ns  ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; g4 ; S          ;
+; N/A                                     ; None                                                ; 13.865 ns  ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; d4 ; S          ;
+; N/A                                     ; None                                                ; 13.854 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; a4 ; S          ;
+; N/A                                     ; None                                                ; 13.850 ns  ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; g4 ; S          ;
+; N/A                                     ; None                                                ; 13.847 ns  ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; d4 ; S          ;
+; N/A                                     ; None                                                ; 13.776 ns  ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; g4 ; S          ;
+; N/A                                     ; None                                                ; 13.773 ns  ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; d4 ; S          ;
+; N/A                                     ; None                                                ; 13.736 ns  ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; a4 ; S          ;
+; N/A                                     ; None                                                ; 13.699 ns  ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; a4 ; S          ;
+; N/A                                     ; None                                                ; 13.695 ns  ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; a5 ; S          ;
+; N/A                                     ; None                                                ; 13.661 ns  ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; a4 ; S          ;
+; N/A                                     ; None                                                ; 13.643 ns  ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; a4 ; S          ;
+; N/A                                     ; None                                                ; 13.605 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; a5 ; S          ;
+; N/A                                     ; None                                                ; 13.569 ns  ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; a4 ; S          ;
+; N/A                                     ; None                                                ; 13.487 ns  ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; a5 ; S          ;
+; N/A                                     ; None                                                ; 13.450 ns  ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; a5 ; S          ;
+; N/A                                     ; None                                                ; 13.421 ns  ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; b5 ; S          ;
+; N/A                                     ; None                                                ; 13.419 ns  ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; e5 ; S          ;
+; N/A                                     ; None                                                ; 13.415 ns  ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; c5 ; S          ;
+; N/A                                     ; None                                                ; 13.412 ns  ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; a5 ; S          ;
+; N/A                                     ; None                                                ; 13.394 ns  ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; a5 ; S          ;
+; N/A                                     ; None                                                ; 13.388 ns  ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; g5 ; S          ;
+; N/A                                     ; None                                                ; 13.386 ns  ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; d5 ; S          ;
+; N/A                                     ; None                                                ; 13.331 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; b5 ; S          ;
+; N/A                                     ; None                                                ; 13.329 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; e5 ; S          ;
+; N/A                                     ; None                                                ; 13.325 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; c5 ; S          ;
+; N/A                                     ; None                                                ; 13.320 ns  ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; a5 ; S          ;
+; N/A                                     ; None                                                ; 13.298 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; g5 ; S          ;
+; N/A                                     ; None                                                ; 13.296 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; d5 ; S          ;
+; N/A                                     ; None                                                ; 13.213 ns  ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; b5 ; S          ;
+; N/A                                     ; None                                                ; 13.211 ns  ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; e5 ; S          ;
+; N/A                                     ; None                                                ; 13.207 ns  ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; c5 ; S          ;
+; N/A                                     ; None                                                ; 13.180 ns  ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; g5 ; S          ;
+; N/A                                     ; None                                                ; 13.178 ns  ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; d5 ; S          ;
+; N/A                                     ; None                                                ; 13.176 ns  ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; b5 ; S          ;
+; N/A                                     ; None                                                ; 13.174 ns  ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; e5 ; S          ;
+; N/A                                     ; None                                                ; 13.170 ns  ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; c5 ; S          ;
+; N/A                                     ; None                                                ; 13.143 ns  ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; g5 ; S          ;
+; N/A                                     ; None                                                ; 13.141 ns  ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; d5 ; S          ;
+; N/A                                     ; None                                                ; 13.138 ns  ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; b5 ; S          ;
+; N/A                                     ; None                                                ; 13.136 ns  ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; e5 ; S          ;
+; N/A                                     ; None                                                ; 13.132 ns  ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; c5 ; S          ;
+; N/A                                     ; None                                                ; 13.120 ns  ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; b5 ; S          ;
+; N/A                                     ; None                                                ; 13.118 ns  ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; e5 ; S          ;
+; N/A                                     ; None                                                ; 13.114 ns  ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; c5 ; S          ;
+; N/A                                     ; None                                                ; 13.105 ns  ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; g5 ; S          ;
+; N/A                                     ; None                                                ; 13.103 ns  ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; d5 ; S          ;
+; N/A                                     ; None                                                ; 13.089 ns  ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; f5 ; S          ;
+; N/A                                     ; None                                                ; 13.087 ns  ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; g5 ; S          ;
+; N/A                                     ; None                                                ; 13.085 ns  ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; d5 ; S          ;
+; N/A                                     ; None                                                ; 13.046 ns  ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; b5 ; S          ;
+; N/A                                     ; None                                                ; 13.044 ns  ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; e5 ; S          ;
+; N/A                                     ; None                                                ; 13.040 ns  ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; c5 ; S          ;
+; N/A                                     ; None                                                ; 13.020 ns  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; g4 ; S          ;
+; N/A                                     ; None                                                ; 13.017 ns  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; d4 ; S          ;
+; N/A                                     ; None                                                ; 13.013 ns  ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; g5 ; S          ;
+; N/A                                     ; None                                                ; 13.011 ns  ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; d5 ; S          ;
+; N/A                                     ; None                                                ; 12.999 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; f5 ; S          ;
+; N/A                                     ; None                                                ; 12.881 ns  ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; f5 ; S          ;
+; N/A                                     ; None                                                ; 12.844 ns  ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; f5 ; S          ;
+; N/A                                     ; None                                                ; 12.813 ns  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; a4 ; S          ;
+; N/A                                     ; None                                                ; 12.806 ns  ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; f5 ; S          ;
+; N/A                                     ; None                                                ; 12.788 ns  ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; f5 ; S          ;
+; N/A                                     ; None                                                ; 12.714 ns  ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; f5 ; S          ;
+; N/A                                     ; None                                                ; 12.564 ns  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; a5 ; S          ;
+; N/A                                     ; None                                                ; 12.290 ns  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; b5 ; S          ;
+; N/A                                     ; None                                                ; 12.288 ns  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; e5 ; S          ;
+; N/A                                     ; None                                                ; 12.284 ns  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; c5 ; S          ;
+; N/A                                     ; None                                                ; 12.257 ns  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; g5 ; S          ;
+; N/A                                     ; None                                                ; 12.255 ns  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; d5 ; S          ;
+; N/A                                     ; None                                                ; 12.161 ns  ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; g0 ; S          ;
+; N/A                                     ; None                                                ; 11.989 ns  ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; c0 ; S          ;
+; N/A                                     ; None                                                ; 11.988 ns  ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; a0 ; S          ;
+; N/A                                     ; None                                                ; 11.958 ns  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; f5 ; S          ;
+; N/A                                     ; None                                                ; 11.733 ns  ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; d0 ; S          ;
+; N/A                                     ; None                                                ; 11.727 ns  ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; f0 ; S          ;
+; N/A                                     ; None                                                ; 11.719 ns  ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; e0 ; S          ;
+; N/A                                     ; None                                                ; 11.671 ns  ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; e2 ; S          ;
+; N/A                                     ; None                                                ; 11.447 ns  ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; g4 ; S          ;
+; N/A                                     ; None                                                ; 11.444 ns  ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; d4 ; S          ;
+; N/A                                     ; None                                                ; 11.282 ns  ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; g2 ; S          ;
+; N/A                                     ; None                                                ; 11.268 ns  ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; b0 ; S          ;
+; N/A                                     ; None                                                ; 11.265 ns  ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; f2 ; S          ;
+; N/A                                     ; None                                                ; 11.240 ns  ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; a4 ; S          ;
+; N/A                                     ; None                                                ; 11.200 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; e3 ; S          ;
+; N/A                                     ; None                                                ; 10.991 ns  ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; a5 ; S          ;
+; N/A                                     ; None                                                ; 10.905 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; c3 ; S          ;
+; N/A                                     ; None                                                ; 10.891 ns  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; g1 ; S          ;
+; N/A                                     ; None                                                ; 10.871 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; g3 ; S          ;
+; N/A                                     ; None                                                ; 10.859 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; f3 ; S          ;
+; N/A                                     ; None                                                ; 10.856 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; d3 ; S          ;
+; N/A                                     ; None                                                ; 10.821 ns  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; g1 ; S          ;
+; N/A                                     ; None                                                ; 10.717 ns  ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; b5 ; S          ;
+; N/A                                     ; None                                                ; 10.715 ns  ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; e5 ; S          ;
+; N/A                                     ; None                                                ; 10.711 ns  ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; c5 ; S          ;
+; N/A                                     ; None                                                ; 10.684 ns  ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; g5 ; S          ;
+; N/A                                     ; None                                                ; 10.682 ns  ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; d5 ; S          ;
+; N/A                                     ; None                                                ; 10.584 ns  ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; g1 ; S          ;
+; N/A                                     ; None                                                ; 10.436 ns  ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; e2 ; S          ;
+; N/A                                     ; None                                                ; 10.432 ns  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; c1 ; S          ;
+; N/A                                     ; None                                                ; 10.385 ns  ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; f5 ; S          ;
+; N/A                                     ; None                                                ; 10.380 ns  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; c1 ; S          ;
+; N/A                                     ; None                                                ; 10.285 ns  ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; b3 ; S          ;
+; N/A                                     ; None                                                ; 10.238 ns  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; e1 ; S          ;
+; N/A                                     ; None                                                ; 10.200 ns  ; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46     ; a3 ; S          ;
+; N/A                                     ; None                                                ; 10.178 ns  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; e1 ; S          ;
+; N/A                                     ; None                                                ; 10.161 ns  ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; c1 ; S          ;
+; N/A                                     ; None                                                ; 10.118 ns  ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; e2 ; S          ;
+; N/A                                     ; None                                                ; 10.052 ns  ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; d1 ; S          ;
+; N/A                                     ; None                                                ; 10.027 ns  ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; e3 ; S          ;
+; N/A                                     ; None                                                ; 10.005 ns  ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; d1 ; S          ;
+; N/A                                     ; None                                                ; 10.004 ns  ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; g4 ; S          ;
+; N/A                                     ; None                                                ; 10.001 ns  ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; d4 ; S          ;
+; N/A                                     ; None                                                ; 9.992 ns   ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; g2 ; S          ;
+; N/A                                     ; None                                                ; 9.971 ns   ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; f2 ; S          ;
+; N/A                                     ; None                                                ; 9.935 ns   ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; e1 ; S          ;
+; N/A                                     ; None                                                ; 9.876 ns   ; save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58     ; a3 ; S          ;
+; N/A                                     ; None                                                ; 9.869 ns   ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; c2 ; S          ;
+; N/A                                     ; None                                                ; 9.829 ns   ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; b1 ; S          ;
+; N/A                                     ; None                                                ; 9.804 ns   ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; a2 ; S          ;
+; N/A                                     ; None                                                ; 9.797 ns   ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; a4 ; S          ;
+; N/A                                     ; None                                                ; 9.797 ns   ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; d2 ; S          ;
+; N/A                                     ; None                                                ; 9.782 ns   ; save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; b2 ; S          ;
+; N/A                                     ; None                                                ; 9.778 ns   ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; b1 ; S          ;
+; N/A                                     ; None                                                ; 9.755 ns   ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; c3 ; S          ;
+; N/A                                     ; None                                                ; 9.749 ns   ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; d1 ; S          ;
+; N/A                                     ; None                                                ; 9.713 ns   ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; f3 ; S          ;
+; N/A                                     ; None                                                ; 9.704 ns   ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; g3 ; S          ;
+; N/A                                     ; None                                                ; 9.699 ns   ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; g2 ; S          ;
+; N/A                                     ; None                                                ; 9.689 ns   ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; d3 ; S          ;
+; N/A                                     ; None                                                ; 9.687 ns   ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; f2 ; S          ;
+; N/A                                     ; None                                                ; 9.578 ns   ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; f1 ; S          ;
+; N/A                                     ; None                                                ; 9.548 ns   ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; a5 ; S          ;
+; N/A                                     ; None                                                ; 9.526 ns   ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; b1 ; S          ;
+; N/A                                     ; None                                                ; 9.494 ns   ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; f1 ; S          ;
+; N/A                                     ; None                                                ; 9.334 ns   ; save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46      ; a1 ; S          ;
+; N/A                                     ; None                                                ; 9.275 ns   ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; f1 ; S          ;
+; N/A                                     ; None                                                ; 9.274 ns   ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; b5 ; S          ;
+; N/A                                     ; None                                                ; 9.274 ns   ; save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; a1 ; S          ;
+; N/A                                     ; None                                                ; 9.272 ns   ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; e5 ; S          ;
+; N/A                                     ; None                                                ; 9.268 ns   ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; c5 ; S          ;
+; N/A                                     ; None                                                ; 9.241 ns   ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; g5 ; S          ;
+; N/A                                     ; None                                                ; 9.239 ns   ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; d5 ; S          ;
+; N/A                                     ; None                                                ; 9.217 ns   ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; g0 ; S          ;
+; N/A                                     ; None                                                ; 9.140 ns   ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; b3 ; S          ;
+; N/A                                     ; None                                                ; 9.033 ns   ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; a0 ; S          ;
+; N/A                                     ; None                                                ; 9.031 ns   ; save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; a1 ; S          ;
+; N/A                                     ; None                                                ; 8.996 ns   ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; c0 ; S          ;
+; N/A                                     ; None                                                ; 8.942 ns   ; save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51       ; f5 ; S          ;
+; N/A                                     ; None                                                ; 8.936 ns   ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; g0 ; S          ;
+; N/A                                     ; None                                                ; 8.813 ns   ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; d0 ; S          ;
+; N/A                                     ; None                                                ; 8.806 ns   ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; e0 ; S          ;
+; N/A                                     ; None                                                ; 8.764 ns   ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; f0 ; S          ;
+; N/A                                     ; None                                                ; 8.731 ns   ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; c0 ; S          ;
+; N/A                                     ; None                                                ; 8.725 ns   ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; a0 ; S          ;
+; N/A                                     ; None                                                ; 8.556 ns   ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; c2 ; S          ;
+; N/A                                     ; None                                                ; 8.543 ns   ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; a2 ; S          ;
+; N/A                                     ; None                                                ; 8.525 ns   ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; d2 ; S          ;
+; N/A                                     ; None                                                ; 8.523 ns   ; counter:comb_158|dff1:comb_14|SRL:comb_9|nand1:comb_6|out~47 ; g4 ; CH         ;
+; N/A                                     ; None                                                ; 8.520 ns   ; counter:comb_158|dff1:comb_14|SRL:comb_9|nand1:comb_6|out~47 ; d4 ; CH         ;
+; N/A                                     ; None                                                ; 8.517 ns   ; save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51     ; a3 ; S          ;
+; N/A                                     ; None                                                ; 8.514 ns   ; save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58      ; b2 ; S          ;
+; N/A                                     ; None                                                ; 8.503 ns   ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; d0 ; S          ;
+; N/A                                     ; None                                                ; 8.496 ns   ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; e0 ; S          ;
+; N/A                                     ; None                                                ; 8.482 ns   ; save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46       ; f0 ; S          ;
+; N/A                                     ; None                                                ; 8.331 ns   ; save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58       ; b0 ; S          ;
+; N/A                                     ; None                                                ; 8.316 ns   ; counter:comb_158|dff1:comb_14|SRL:comb_9|nand1:comb_6|out~47 ; a4 ; CH         ;
+; N/A                                     ; None                                                ; 8.288 ns   ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; c2 ; S          ;
+; N/A                                     ; None                                                ; 8.272 ns   ; save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46     ; e3 ; S          ;
+; N/A                                     ; None                                                ; 8.224 ns   ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; a2 ; S          ;
+; N/A                                     ; None                                                ; 8.216 ns   ; save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51      ; d2 ; S          ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;                                                              ;    ;            ;
++-----------------------------------------+-----------------------------------------------------+------------+--------------------------------------------------------------+----+------------+
+
+
++---------------------------------------------------------+
+; tpd                                                     ;
++-------+-------------------+-----------------+------+----+
+; Slack ; Required P2P Time ; Actual P2P Time ; From ; To ;
++-------+-------------------+-----------------+------+----+
+; N/A   ; None              ; 20.886 ns       ; A1   ; g4 ;
+; N/A   ; None              ; 20.883 ns       ; A1   ; d4 ;
+; N/A   ; None              ; 20.679 ns       ; A1   ; a4 ;
+; N/A   ; None              ; 20.430 ns       ; A1   ; a5 ;
+; N/A   ; None              ; 20.156 ns       ; A1   ; b5 ;
+; N/A   ; None              ; 20.154 ns       ; A1   ; e5 ;
+; N/A   ; None              ; 20.150 ns       ; A1   ; c5 ;
+; N/A   ; None              ; 20.123 ns       ; A1   ; g5 ;
+; N/A   ; None              ; 20.121 ns       ; A1   ; d5 ;
+; N/A   ; None              ; 19.824 ns       ; A1   ; f5 ;
+; N/A   ; None              ; 18.646 ns       ; C3   ; g4 ;
+; N/A   ; None              ; 18.643 ns       ; C3   ; d4 ;
+; N/A   ; None              ; 18.439 ns       ; C3   ; a4 ;
+; N/A   ; None              ; 18.190 ns       ; C3   ; a5 ;
+; N/A   ; None              ; 17.916 ns       ; C3   ; b5 ;
+; N/A   ; None              ; 17.914 ns       ; C3   ; e5 ;
+; N/A   ; None              ; 17.910 ns       ; C3   ; c5 ;
+; N/A   ; None              ; 17.883 ns       ; C3   ; g5 ;
+; N/A   ; None              ; 17.881 ns       ; C3   ; d5 ;
+; N/A   ; None              ; 17.754 ns       ; B2   ; g4 ;
+; N/A   ; None              ; 17.751 ns       ; B2   ; d4 ;
+; N/A   ; None              ; 17.584 ns       ; C3   ; f5 ;
+; N/A   ; None              ; 17.547 ns       ; B2   ; a4 ;
+; N/A   ; None              ; 17.457 ns       ; B1   ; g4 ;
+; N/A   ; None              ; 17.454 ns       ; B1   ; d4 ;
+; N/A   ; None              ; 17.298 ns       ; B2   ; a5 ;
+; N/A   ; None              ; 17.289 ns       ; C2   ; g4 ;
+; N/A   ; None              ; 17.286 ns       ; C2   ; d4 ;
+; N/A   ; None              ; 17.250 ns       ; B1   ; a4 ;
+; N/A   ; None              ; 17.155 ns       ; A    ; g4 ;
+; N/A   ; None              ; 17.152 ns       ; A    ; d4 ;
+; N/A   ; None              ; 17.151 ns       ; B3   ; g4 ;
+; N/A   ; None              ; 17.148 ns       ; B3   ; d4 ;
+; N/A   ; None              ; 17.082 ns       ; C2   ; a4 ;
+; N/A   ; None              ; 17.024 ns       ; B2   ; b5 ;
+; N/A   ; None              ; 17.022 ns       ; B2   ; e5 ;
+; N/A   ; None              ; 17.018 ns       ; B2   ; c5 ;
+; N/A   ; None              ; 17.001 ns       ; B1   ; a5 ;
+; N/A   ; None              ; 16.991 ns       ; B2   ; g5 ;
+; N/A   ; None              ; 16.989 ns       ; B2   ; d5 ;
+; N/A   ; None              ; 16.948 ns       ; A    ; a4 ;
+; N/A   ; None              ; 16.944 ns       ; B3   ; a4 ;
+; N/A   ; None              ; 16.833 ns       ; C2   ; a5 ;
+; N/A   ; None              ; 16.794 ns       ; C    ; g4 ;
+; N/A   ; None              ; 16.791 ns       ; C    ; d4 ;
+; N/A   ; None              ; 16.727 ns       ; B1   ; b5 ;
+; N/A   ; None              ; 16.725 ns       ; B1   ; e5 ;
+; N/A   ; None              ; 16.721 ns       ; B1   ; c5 ;
+; N/A   ; None              ; 16.699 ns       ; A    ; a5 ;
+; N/A   ; None              ; 16.695 ns       ; B3   ; a5 ;
+; N/A   ; None              ; 16.694 ns       ; B1   ; g5 ;
+; N/A   ; None              ; 16.692 ns       ; B2   ; f5 ;
+; N/A   ; None              ; 16.692 ns       ; B1   ; d5 ;
+; N/A   ; None              ; 16.587 ns       ; C    ; a4 ;
+; N/A   ; None              ; 16.559 ns       ; C2   ; b5 ;
+; N/A   ; None              ; 16.557 ns       ; C2   ; e5 ;
+; N/A   ; None              ; 16.553 ns       ; C2   ; c5 ;
+; N/A   ; None              ; 16.526 ns       ; C2   ; g5 ;
+; N/A   ; None              ; 16.524 ns       ; C2   ; d5 ;
+; N/A   ; None              ; 16.425 ns       ; A    ; b5 ;
+; N/A   ; None              ; 16.423 ns       ; A    ; e5 ;
+; N/A   ; None              ; 16.421 ns       ; B3   ; b5 ;
+; N/A   ; None              ; 16.419 ns       ; B3   ; e5 ;
+; N/A   ; None              ; 16.419 ns       ; A    ; c5 ;
+; N/A   ; None              ; 16.415 ns       ; B3   ; c5 ;
+; N/A   ; None              ; 16.395 ns       ; B1   ; f5 ;
+; N/A   ; None              ; 16.392 ns       ; A    ; g5 ;
+; N/A   ; None              ; 16.390 ns       ; A    ; d5 ;
+; N/A   ; None              ; 16.388 ns       ; B3   ; g5 ;
+; N/A   ; None              ; 16.386 ns       ; B3   ; d5 ;
+; N/A   ; None              ; 16.338 ns       ; C    ; a5 ;
+; N/A   ; None              ; 16.233 ns       ; A3   ; g4 ;
+; N/A   ; None              ; 16.230 ns       ; A3   ; d4 ;
+; N/A   ; None              ; 16.227 ns       ; C2   ; f5 ;
+; N/A   ; None              ; 16.093 ns       ; A    ; f5 ;
+; N/A   ; None              ; 16.089 ns       ; B3   ; f5 ;
+; N/A   ; None              ; 16.064 ns       ; C    ; b5 ;
+; N/A   ; None              ; 16.062 ns       ; C    ; e5 ;
+; N/A   ; None              ; 16.058 ns       ; C    ; c5 ;
+; N/A   ; None              ; 16.031 ns       ; C    ; g5 ;
+; N/A   ; None              ; 16.029 ns       ; C    ; d5 ;
+; N/A   ; None              ; 16.026 ns       ; A3   ; a4 ;
+; N/A   ; None              ; 15.777 ns       ; A3   ; a5 ;
+; N/A   ; None              ; 15.732 ns       ; C    ; f5 ;
+; N/A   ; None              ; 15.503 ns       ; A3   ; b5 ;
+; N/A   ; None              ; 15.501 ns       ; A3   ; e5 ;
+; N/A   ; None              ; 15.497 ns       ; A3   ; c5 ;
+; N/A   ; None              ; 15.470 ns       ; A3   ; g5 ;
+; N/A   ; None              ; 15.468 ns       ; A3   ; d5 ;
+; N/A   ; None              ; 15.363 ns       ; C1   ; g4 ;
+; N/A   ; None              ; 15.360 ns       ; C1   ; d4 ;
+; N/A   ; None              ; 15.171 ns       ; A3   ; f5 ;
+; N/A   ; None              ; 15.156 ns       ; C1   ; a4 ;
+; N/A   ; None              ; 14.907 ns       ; C1   ; a5 ;
+; N/A   ; None              ; 14.633 ns       ; C1   ; b5 ;
+; N/A   ; None              ; 14.631 ns       ; C1   ; e5 ;
+; N/A   ; None              ; 14.627 ns       ; C1   ; c5 ;
+; N/A   ; None              ; 14.600 ns       ; C1   ; g5 ;
+; N/A   ; None              ; 14.598 ns       ; C1   ; d5 ;
+; N/A   ; None              ; 14.476 ns       ; B    ; g4 ;
+; N/A   ; None              ; 14.473 ns       ; B    ; d4 ;
+; N/A   ; None              ; 14.301 ns       ; C1   ; f5 ;
+; N/A   ; None              ; 14.269 ns       ; B    ; a4 ;
+; N/A   ; None              ; 14.020 ns       ; B    ; a5 ;
+; N/A   ; None              ; 13.746 ns       ; B    ; b5 ;
+; N/A   ; None              ; 13.744 ns       ; B    ; e5 ;
+; N/A   ; None              ; 13.740 ns       ; B    ; c5 ;
+; N/A   ; None              ; 13.731 ns       ; A2   ; g4 ;
+; N/A   ; None              ; 13.728 ns       ; A2   ; d4 ;
+; N/A   ; None              ; 13.713 ns       ; B    ; g5 ;
+; N/A   ; None              ; 13.711 ns       ; B    ; d5 ;
+; N/A   ; None              ; 13.524 ns       ; A2   ; a4 ;
+; N/A   ; None              ; 13.414 ns       ; B    ; f5 ;
+; N/A   ; None              ; 13.275 ns       ; A2   ; a5 ;
+; N/A   ; None              ; 13.001 ns       ; A2   ; b5 ;
+; N/A   ; None              ; 12.999 ns       ; A2   ; e5 ;
+; N/A   ; None              ; 12.995 ns       ; A2   ; c5 ;
+; N/A   ; None              ; 12.968 ns       ; A2   ; g5 ;
+; N/A   ; None              ; 12.966 ns       ; A2   ; d5 ;
+; N/A   ; None              ; 12.669 ns       ; A2   ; f5 ;
+; N/A   ; None              ; 11.474 ns       ; CH   ; g4 ;
+; N/A   ; None              ; 11.471 ns       ; CH   ; d4 ;
+; N/A   ; None              ; 11.405 ns       ; S    ; g4 ;
+; N/A   ; None              ; 11.402 ns       ; S    ; d4 ;
+; N/A   ; None              ; 11.267 ns       ; CH   ; a4 ;
+; N/A   ; None              ; 11.198 ns       ; S    ; a4 ;
+; N/A   ; None              ; 10.949 ns       ; S    ; a5 ;
+; N/A   ; None              ; 10.899 ns       ; CH   ; a5 ;
+; N/A   ; None              ; 10.675 ns       ; S    ; b5 ;
+; N/A   ; None              ; 10.673 ns       ; S    ; e5 ;
+; N/A   ; None              ; 10.669 ns       ; S    ; c5 ;
+; N/A   ; None              ; 10.642 ns       ; S    ; g5 ;
+; N/A   ; None              ; 10.640 ns       ; S    ; d5 ;
+; N/A   ; None              ; 10.625 ns       ; CH   ; b5 ;
+; N/A   ; None              ; 10.623 ns       ; CH   ; e5 ;
+; N/A   ; None              ; 10.619 ns       ; CH   ; c5 ;
+; N/A   ; None              ; 10.592 ns       ; CH   ; g5 ;
+; N/A   ; None              ; 10.590 ns       ; CH   ; d5 ;
+; N/A   ; None              ; 10.343 ns       ; S    ; f5 ;
+; N/A   ; None              ; 10.293 ns       ; CH   ; f5 ;
++-------+-------------------+-----------------+------+----+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                         ;
++---------------+-------------+------------+------+---------------------------------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th  ; From ; To                                                            ; To Clock ;
++---------------+-------------+------------+------+---------------------------------------------------------------+----------+
+; N/A           ; None        ; -2.767 ns  ; A2   ; save:comb_72|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6        ; S        ;
+; N/A           ; None        ; -3.116 ns  ; B3   ; save:comb_106|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6       ; S        ;
+; N/A           ; None        ; -3.148 ns  ; A3   ; save:comb_106|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6       ; S        ;
+; N/A           ; None        ; -3.829 ns  ; C3   ; save:comb_106|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6       ; S        ;
+; N/A           ; None        ; -3.970 ns  ; A    ; save:comb_4|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6         ; S        ;
+; N/A           ; None        ; -4.107 ns  ; C    ; save:comb_4|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6         ; S        ;
+; N/A           ; None        ; -4.316 ns  ; C2   ; save:comb_72|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6        ; S        ;
+; N/A           ; None        ; -4.399 ns  ; B1   ; save:comb_38|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6        ; S        ;
+; N/A           ; None        ; -4.423 ns  ; C1   ; save:comb_38|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6        ; S        ;
+; N/A           ; None        ; -4.434 ns  ; B2   ; save:comb_72|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6        ; S        ;
+; N/A           ; None        ; -4.605 ns  ; CH   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A           ; None        ; -4.655 ns  ; S    ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A           ; None        ; -4.892 ns  ; CH   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A           ; None        ; -4.942 ns  ; S    ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A           ; None        ; -5.286 ns  ; CH   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A           ; None        ; -5.454 ns  ; S    ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A           ; None        ; -5.463 ns  ; A1   ; save:comb_38|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6        ; S        ;
+; N/A           ; None        ; -6.888 ns  ; B    ; save:comb_4|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6         ; S        ;
+; N/A           ; None        ; -6.981 ns  ; A2   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A           ; None        ; -7.268 ns  ; A2   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A           ; None        ; -7.387 ns  ; A2   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A           ; None        ; -7.726 ns  ; B    ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A           ; None        ; -8.013 ns  ; B    ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A           ; None        ; -8.407 ns  ; B    ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A           ; None        ; -8.613 ns  ; C1   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A           ; None        ; -8.900 ns  ; C1   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A           ; None        ; -9.019 ns  ; C1   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A           ; None        ; -9.483 ns  ; A3   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A           ; None        ; -9.770 ns  ; A3   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A           ; None        ; -9.882 ns  ; A3   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A           ; None        ; -10.044 ns ; C    ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A           ; None        ; -10.331 ns ; C    ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A           ; None        ; -10.401 ns ; B3   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A           ; None        ; -10.405 ns ; A    ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A           ; None        ; -10.443 ns ; C    ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A           ; None        ; -10.539 ns ; C2   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A           ; None        ; -10.688 ns ; B3   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A           ; None        ; -10.692 ns ; A    ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A           ; None        ; -10.707 ns ; B1   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A           ; None        ; -10.800 ns ; B3   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A           ; None        ; -10.826 ns ; C2   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A           ; None        ; -10.938 ns ; C2   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A           ; None        ; -10.994 ns ; B1   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A           ; None        ; -11.004 ns ; B2   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A           ; None        ; -11.086 ns ; A    ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A           ; None        ; -11.106 ns ; B1   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A           ; None        ; -11.291 ns ; B2   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A           ; None        ; -11.403 ns ; B2   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A           ; None        ; -11.896 ns ; C3   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A           ; None        ; -12.183 ns ; C3   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A           ; None        ; -12.295 ns ; C3   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
+; N/A           ; None        ; -14.136 ns ; A1   ; counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107 ; CH       ;
+; N/A           ; None        ; -14.423 ns ; A1   ; counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6   ; CH       ;
+; N/A           ; None        ; -14.535 ns ; A1   ; counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42  ; CH       ;
++---------------+-------------+------------+------+---------------------------------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Web Edition
+    Info: Processing started: Mon Jul 30 13:03:33 2018
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off project -c project --timing_analysis_only
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "save:comb_4|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58" is a latch
+    Warning: Node "save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51" is a latch
+    Warning: Node "save:comb_4|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46" is a latch
+    Warning: Node "save:comb_4|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6" is a latch
+    Warning: Node "save:comb_4|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6" is a latch
+    Warning: Node "save:comb_4|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6" is a latch
+    Warning: Node "save:comb_38|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46" is a latch
+    Warning: Node "save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58" is a latch
+    Warning: Node "save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51" is a latch
+    Warning: Node "save:comb_38|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6" is a latch
+    Warning: Node "save:comb_38|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6" is a latch
+    Warning: Node "save:comb_38|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6" is a latch
+    Warning: Node "save:comb_72|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58" is a latch
+    Warning: Node "save:comb_72|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46" is a latch
+    Warning: Node "save:comb_72|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51" is a latch
+    Warning: Node "save:comb_72|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6" is a latch
+    Warning: Node "save:comb_72|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6" is a latch
+    Warning: Node "save:comb_72|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6" is a latch
+    Warning: Node "save:comb_106|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51" is a latch
+    Warning: Node "save:comb_106|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58" is a latch
+    Warning: Node "save:comb_106|dff1:comb_9|SRL:comb_9|nand1:comb_6|out~46" is a latch
+    Warning: Node "save:comb_106|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6" is a latch
+    Warning: Node "save:comb_106|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6" is a latch
+    Warning: Node "save:comb_106|dff1:comb_9|SRL:comb_8|nand1:comb_6|out~6" is a latch
+    Warning: Node "counter:comb_158|dff1:comb_16|SRL:comb_9|nand1:comb_6|out~55" is a latch
+    Warning: Node "counter:comb_158|dff1:comb_14|SRL:comb_9|nand1:comb_6|out~47" is a latch
+    Warning: Node "counter:comb_158|dff1:comb_18|SRL:comb_9|nand1:comb_6|out~67" is a latch
+    Warning: Node "counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42" is a latch
+    Warning: Node "counter:comb_158|dff1:comb_14|SRL:comb_8|nand1:comb_6|out~107" is a latch
+    Warning: Node "counter:comb_158|dff1:comb_18|SRL:comb_8|nand1:comb_6|out~6" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "S" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+    Info: Assuming node "CH" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+Info: Clock "S" has Internal fmax of 303.4 MHz between source register "save:comb_38|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6" and destination register "save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51" (period= 3.296 ns)
+    Info: + Longest register to register delay is 0.428 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X16_Y8_N2; Fanout = 1; REG Node = 'save:comb_38|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6'
+        Info: 2: + IC(0.278 ns) + CELL(0.150 ns) = 0.428 ns; Loc. = LCCOMB_X16_Y8_N6; Fanout = 8; REG Node = 'save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51'
+        Info: Total cell delay = 0.150 ns ( 35.05 % )
+        Info: Total interconnect delay = 0.278 ns ( 64.95 % )
+    Info: - Smallest clock skew is 0.304 ns
+        Info: + Shortest clock path from clock "S" to destination register is 3.816 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.812 ns) = 0.812 ns; Loc. = PIN_L8; Fanout = 26; CLK Node = 'S'
+            Info: 2: + IC(2.567 ns) + CELL(0.437 ns) = 3.816 ns; Loc. = LCCOMB_X16_Y8_N6; Fanout = 8; REG Node = 'save:comb_38|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51'
+            Info: Total cell delay = 1.249 ns ( 32.73 % )
+            Info: Total interconnect delay = 2.567 ns ( 67.27 % )
+        Info: - Longest clock path from clock "S" to source register is 3.512 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.812 ns) = 0.812 ns; Loc. = PIN_L8; Fanout = 26; CLK Node = 'S'
+            Info: 2: + IC(2.550 ns) + CELL(0.150 ns) = 3.512 ns; Loc. = LCCOMB_X16_Y8_N2; Fanout = 1; REG Node = 'save:comb_38|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6'
+            Info: Total cell delay = 0.962 ns ( 27.39 % )
+            Info: Total interconnect delay = 2.550 ns ( 72.61 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Micro setup delay of destination is 1.524 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: Clock "CH" has Internal fmax of 195.16 MHz between source register "counter:comb_158|dff1:comb_18|SRL:comb_9|nand1:comb_6|out~67" and destination register "counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42" (period= 5.124 ns)
+    Info: + Longest register to register delay is 1.693 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X1_Y39_N10; Fanout = 11; REG Node = 'counter:comb_158|dff1:comb_18|SRL:comb_9|nand1:comb_6|out~67'
+        Info: 2: + IC(0.288 ns) + CELL(0.150 ns) = 0.438 ns; Loc. = LCCOMB_X1_Y39_N0; Fanout = 1; COMB Node = 'counter:comb_158|dff1:comb_18|and1:comb_10|out~25'
+        Info: 3: + IC(0.239 ns) + CELL(0.149 ns) = 0.826 ns; Loc. = LCCOMB_X1_Y39_N12; Fanout = 2; COMB Node = 'counter:comb_158|dff1:comb_18|and1:comb_10|out'
+        Info: 4: + IC(0.448 ns) + CELL(0.419 ns) = 1.693 ns; Loc. = LCCOMB_X1_Y39_N24; Fanout = 1; REG Node = 'counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42'
+        Info: Total cell delay = 0.718 ns ( 42.41 % )
+        Info: Total interconnect delay = 0.975 ns ( 57.59 % )
+    Info: - Smallest clock skew is -0.004 ns
+        Info: + Shortest clock path from clock "CH" to destination register is 2.030 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.812 ns) = 0.812 ns; Loc. = PIN_L7; Fanout = 8; CLK Node = 'CH'
+            Info: 2: + IC(1.068 ns) + CELL(0.150 ns) = 2.030 ns; Loc. = LCCOMB_X1_Y39_N24; Fanout = 1; REG Node = 'counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42'
+            Info: Total cell delay = 0.962 ns ( 47.39 % )
+            Info: Total interconnect delay = 1.068 ns ( 52.61 % )
+        Info: - Longest clock path from clock "CH" to source register is 2.034 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.812 ns) = 0.812 ns; Loc. = PIN_L7; Fanout = 8; CLK Node = 'CH'
+            Info: 2: + IC(1.072 ns) + CELL(0.150 ns) = 2.034 ns; Loc. = LCCOMB_X1_Y39_N10; Fanout = 11; REG Node = 'counter:comb_158|dff1:comb_18|SRL:comb_9|nand1:comb_6|out~67'
+            Info: Total cell delay = 0.962 ns ( 47.30 % )
+            Info: Total interconnect delay = 1.072 ns ( 52.70 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Micro setup delay of destination is 0.865 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Warning: Circuit may not operate. Detected 2 non-operational path(s) clocked by clock "S" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "save:comb_4|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6" and destination pin or register "save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51" for clock "S" (Hold time is 1.069 ns)
+    Info: + Largest clock skew is 1.468 ns
+        Info: + Longest clock path from clock "S" to destination register is 3.489 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.812 ns) = 0.812 ns; Loc. = PIN_L8; Fanout = 26; CLK Node = 'S'
+            Info: 2: + IC(2.258 ns) + CELL(0.419 ns) = 3.489 ns; Loc. = LCCOMB_X1_Y39_N26; Fanout = 8; REG Node = 'save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51'
+            Info: Total cell delay = 1.231 ns ( 35.28 % )
+            Info: Total interconnect delay = 2.258 ns ( 64.72 % )
+        Info: - Shortest clock path from clock "S" to source register is 2.021 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.812 ns) = 0.812 ns; Loc. = PIN_L8; Fanout = 26; CLK Node = 'S'
+            Info: 2: + IC(1.059 ns) + CELL(0.150 ns) = 2.021 ns; Loc. = LCCOMB_X1_Y39_N30; Fanout = 1; REG Node = 'save:comb_4|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6'
+            Info: Total cell delay = 0.962 ns ( 47.60 % )
+            Info: Total interconnect delay = 1.059 ns ( 52.40 % )
+    Info: - Micro clock to output delay of source is 0.000 ns
+    Info: - Shortest register to register delay is 0.399 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X1_Y39_N30; Fanout = 1; REG Node = 'save:comb_4|dff1:comb_7|SRL:comb_8|nand1:comb_6|out~6'
+        Info: 2: + IC(0.249 ns) + CELL(0.150 ns) = 0.399 ns; Loc. = LCCOMB_X1_Y39_N26; Fanout = 8; REG Node = 'save:comb_4|dff1:comb_7|SRL:comb_9|nand1:comb_6|out~51'
+        Info: Total cell delay = 0.150 ns ( 37.59 % )
+        Info: Total interconnect delay = 0.249 ns ( 62.41 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: tsu for register "counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42" (data pin = "A1", clock pin = "CH") is 15.800 ns
+    Info: + Longest pin to register delay is 16.965 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.822 ns) = 0.822 ns; Loc. = PIN_AC24; Fanout = 2; PIN Node = 'A1'
+        Info: 2: + IC(7.622 ns) + CELL(0.436 ns) = 8.880 ns; Loc. = LCCOMB_X4_Y30_N18; Fanout = 1; COMB Node = 'status:comb_165|d~96'
+        Info: 3: + IC(2.960 ns) + CELL(0.410 ns) = 12.250 ns; Loc. = LCCOMB_X12_Y8_N4; Fanout = 3; COMB Node = 'status:comb_165|d~99'
+        Info: 4: + IC(3.179 ns) + CELL(0.275 ns) = 15.704 ns; Loc. = LCCOMB_X1_Y39_N6; Fanout = 11; COMB Node = 'reset~48'
+        Info: 5: + IC(0.310 ns) + CELL(0.413 ns) = 16.427 ns; Loc. = LCCOMB_X1_Y39_N16; Fanout = 1; COMB Node = 'segdriver:comb_164|c~14'
+        Info: 6: + IC(0.263 ns) + CELL(0.275 ns) = 16.965 ns; Loc. = LCCOMB_X1_Y39_N24; Fanout = 1; REG Node = 'counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42'
+        Info: Total cell delay = 2.631 ns ( 15.51 % )
+        Info: Total interconnect delay = 14.334 ns ( 84.49 % )
+    Info: + Micro setup delay of destination is 0.865 ns
+    Info: - Shortest clock path from clock "CH" to destination register is 2.030 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.812 ns) = 0.812 ns; Loc. = PIN_L7; Fanout = 8; CLK Node = 'CH'
+        Info: 2: + IC(1.068 ns) + CELL(0.150 ns) = 2.030 ns; Loc. = LCCOMB_X1_Y39_N24; Fanout = 1; REG Node = 'counter:comb_158|dff1:comb_16|SRL:comb_8|nand1:comb_6|out~42'
+        Info: Total cell delay = 0.962 ns ( 47.39 % )
+        Info: Total interconnect delay = 1.068 ns ( 52.61 % )
+Info: tco from clock "S" to destination pin "g4" through register "save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58" is 19.113 ns
+    Info: + Longest clock path from clock "S" to source register is 3.821 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.812 ns) = 0.812 ns; Loc. = PIN_L8; Fanout = 26; CLK Node = 'S'
+        Info: 2: + IC(2.572 ns) + CELL(0.437 ns) = 3.821 ns; Loc. = LCCOMB_X16_Y8_N18; Fanout = 8; REG Node = 'save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58'
+        Info: Total cell delay = 1.249 ns ( 32.69 % )
+        Info: Total interconnect delay = 2.572 ns ( 67.31 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Longest register to pin delay is 15.292 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X16_Y8_N18; Fanout = 8; REG Node = 'save:comb_38|dff1:comb_5|SRL:comb_9|nand1:comb_6|out~58'
+        Info: 2: + IC(2.866 ns) + CELL(0.420 ns) = 3.286 ns; Loc. = LCCOMB_X4_Y30_N18; Fanout = 1; COMB Node = 'status:comb_165|d~96'
+        Info: 3: + IC(2.960 ns) + CELL(0.410 ns) = 6.656 ns; Loc. = LCCOMB_X12_Y8_N4; Fanout = 3; COMB Node = 'status:comb_165|d~99'
+        Info: 4: + IC(3.179 ns) + CELL(0.275 ns) = 10.110 ns; Loc. = LCCOMB_X1_Y39_N6; Fanout = 11; COMB Node = 'reset~48'
+        Info: 5: + IC(0.304 ns) + CELL(0.438 ns) = 10.852 ns; Loc. = LCCOMB_X1_Y39_N8; Fanout = 2; COMB Node = 'check:comb_159|A~19'
+        Info: 6: + IC(0.255 ns) + CELL(0.393 ns) = 11.500 ns; Loc. = LCCOMB_X1_Y39_N14; Fanout = 2; COMB Node = 'status:comb_165|d~102'
+        Info: 7: + IC(1.150 ns) + CELL(2.642 ns) = 15.292 ns; Loc. = PIN_M2; Fanout = 0; PIN Node = 'g4'
+        Info: Total cell delay = 4.578 ns ( 29.94 % )
+        Info: Total interconnect delay = 10.714 ns ( 70.06 % )
+Info: Longest tpd from source pin "A1" to destination pin "g4" is 20.886 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.822 ns) = 0.822 ns; Loc. = PIN_AC24; Fanout = 2; PIN Node = 'A1'
+    Info: 2: + IC(7.622 ns) + CELL(0.436 ns) = 8.880 ns; Loc. = LCCOMB_X4_Y30_N18; Fanout = 1; COMB Node = 'status:comb_165|d~96'
+    Info: 3: + IC(2.960 ns) + CELL(0.410 ns) = 12.250 ns; Loc. = LCCOMB_X12_Y8_N4; Fanout = 3; COMB Node = 'status:comb_165|d~99'
+    Info: 4: + IC(3.179 ns) + CELL(0.275 ns) = 15.704 ns; Loc. = LCCOMB_X1_Y39_N6; Fanout = 11; COMB Node = 'reset~48'
+    Info: 5: + IC(0.304 ns) + CELL(0.438 ns) = 16.446 ns; Loc. = LCCOMB_X1_Y39_N8; Fanout = 2; COMB Node = 'check:comb_159|A~19'
+    Info: 6: + IC(0.255 ns) + CELL(0.393 ns) = 17.094 ns; Loc. = LCCOMB_X1_Y39_N14; Fanout = 2; COMB Node = 'status:comb_165|d~102'
+    Info: 7: + IC(1.150 ns) + CELL(2.642 ns) = 20.886 ns; Loc. = PIN_M2; Fanout = 0; PIN Node = 'g4'
+    Info: Total cell delay = 5.416 ns ( 25.93 % )
+    Info: Total interconnect delay = 15.470 ns ( 74.07 % )
+Info: th for register "save:comb_72|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6" (data pin = "A2", clock pin = "S") is -2.767 ns
+    Info: + Longest clock path from clock "S" to destination register is 3.503 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.812 ns) = 0.812 ns; Loc. = PIN_L8; Fanout = 26; CLK Node = 'S'
+        Info: 2: + IC(2.416 ns) + CELL(0.275 ns) = 3.503 ns; Loc. = LCCOMB_X4_Y11_N6; Fanout = 1; REG Node = 'save:comb_72|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6'
+        Info: Total cell delay = 1.087 ns ( 31.03 % )
+        Info: Total interconnect delay = 2.416 ns ( 68.97 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: - Shortest pin to register delay is 6.270 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.832 ns) = 0.832 ns; Loc. = PIN_W5; Fanout = 2; PIN Node = 'A2'
+        Info: 2: + IC(5.019 ns) + CELL(0.419 ns) = 6.270 ns; Loc. = LCCOMB_X4_Y11_N6; Fanout = 1; REG Node = 'save:comb_72|dff1:comb_5|SRL:comb_8|nand1:comb_6|out~6'
+        Info: Total cell delay = 1.251 ns ( 19.95 % )
+        Info: Total interconnect delay = 5.019 ns ( 80.05 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 33 warnings
+    Info: Allocated 169 megabytes of memory during processing
+    Info: Processing ended: Mon Jul 30 13:03:33 2018
+    Info: Elapsed time: 00:00:00
+
+

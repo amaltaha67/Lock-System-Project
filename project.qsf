@@ -1,0 +1,113 @@
+# Copyright (C) 1991-2007 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		project_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C70F896C6
+set_global_assignment -name TOP_LEVEL_ENTITY Final
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 7.2
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "01:48:50  JULY 25, 2018"
+set_global_assignment -name LAST_QUARTUS_VERSION 7.2
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_palace
+set_global_assignment -name LL_ROOT_REGION ON -entity project -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity project -section_id "Root Region"
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE dfff.vwf
+set_global_assignment -name VERILOG_FILE check.v
+set_global_assignment -name VERILOG_FILE status.v
+set_global_assignment -name VERILOG_FILE lib.v
+set_global_assignment -name VERILOG_FILE dff1.v
+set_global_assignment -name VERILOG_FILE mux1.v
+set_global_assignment -name VERILOG_FILE compare.v
+set_global_assignment -name VERILOG_FILE segdriver.v
+set_global_assignment -name VERILOG_FILE counter.v
+set_global_assignment -name VERILOG_FILE Final.v
+set_global_assignment -name VERILOG_FILE save.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE dfff.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE save.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE save1.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE count.vwf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 2147039 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_instance_assignment -name PARTITION_HIERARCHY no_file_for_top_partition -to | -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE final1.vwf
+set_global_assignment -name VERILOG_FILE SRL.v
+set_location_assignment PIN_AE8 -to a0
+set_location_assignment PIN_AF9 -to b0
+set_location_assignment PIN_AH9 -to c0
+set_location_assignment PIN_AD10 -to d0
+set_location_assignment PIN_AF10 -to e0
+set_location_assignment PIN_AD11 -to f0
+set_location_assignment PIN_AD12 -to g0
+set_location_assignment PIN_AG13 -to a1
+set_location_assignment PIN_AE16 -to b1
+set_location_assignment PIN_AF16 -to c1
+set_location_assignment PIN_AG16 -to d1
+set_location_assignment PIN_AE17 -to e1
+set_location_assignment PIN_AF17 -to f1
+set_location_assignment PIN_AD17 -to g1
+set_location_assignment PIN_AE7 -to a2
+set_location_assignment PIN_AF7 -to b2
+set_location_assignment PIN_AH5 -to c2
+set_location_assignment PIN_AG4 -to d2
+set_location_assignment PIN_AB18 -to e2
+set_location_assignment PIN_AB19 -to f2
+set_location_assignment PIN_AE19 -to g2
+set_location_assignment PIN_P6 -to a3
+set_location_assignment PIN_P4 -to b3
+set_location_assignment PIN_N10 -to c3
+set_location_assignment PIN_N7 -to d3
+set_location_assignment PIN_M8 -to e3
+set_location_assignment PIN_M7 -to f3
+set_location_assignment PIN_M6 -to g3
+set_location_assignment PIN_P1 -to a4
+set_location_assignment PIN_P2 -to b4
+set_location_assignment PIN_P3 -to c4
+set_location_assignment PIN_N2 -to d4
+set_location_assignment PIN_N3 -to e4
+set_location_assignment PIN_M1 -to f4
+set_location_assignment PIN_M2 -to g4
+set_location_assignment PIN_M3 -to a5
+set_location_assignment PIN_L1 -to b5
+set_location_assignment PIN_L2 -to c5
+set_location_assignment PIN_L3 -to d5
+set_location_assignment PIN_K1 -to e5
+set_location_assignment PIN_K4 -to f5
+set_location_assignment PIN_K5 -to g5
+set_location_assignment PIN_AA23 -to C
+set_location_assignment PIN_AB26 -to B
+set_location_assignment PIN_AB25 -to A
+set_location_assignment PIN_AC27 -to C1
+set_location_assignment PIN_AC26 -to B1
+set_location_assignment PIN_AC24 -to A1
+set_location_assignment PIN_AD24 -to C2
+set_location_assignment PIN_AE27 -to B2
+set_location_assignment PIN_W5 -to A2
+set_location_assignment PIN_V10 -to C3
+set_location_assignment PIN_U9 -to B3
+set_location_assignment PIN_T9 -to A3
+set_location_assignment PIN_L7 -to CH
+set_location_assignment PIN_L8 -to S

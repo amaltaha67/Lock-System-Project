@@ -1,0 +1,8 @@
+//check (CH , OUT , torf , out1 , out0);
+module check (ch , l , x , A , B);
+input ch , l , x ; 
+output  A , B ; 
+assign A = ch& l ; //*it was ch& l ; 
+assign B =  ch&(~x | l);  //*it was ch &~x | l&ch; 
+
+endmodule 
